@@ -5,7 +5,6 @@ import instagram from './../assets/social/instagram3.svg'
 import linkedin from './../assets/social/linkedin3.svg'
 import twitter from './../assets/social/twitter3.svg'
 import youtube from './../assets/social/youtube3.svg'
-import Apps from './../assets/col.png'
 import PlaystoreBtn from './../assets/playstorebtn.svg'
 import AppStoreBtn from './../assets/appstorebtn.svg'
 
