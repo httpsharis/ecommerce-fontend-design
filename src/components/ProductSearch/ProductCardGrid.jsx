@@ -2,7 +2,7 @@ import React from 'react'
 import { Star, Heart } from 'react-feather'
 import { GoDotFill } from "react-icons/go"
 import Iphone from './../../assets/iphone.png'
-import { Link } from 'react-router'  // Fix import path
+import { Link } from 'react-router'
 
 // Sample product data
 const products = [
@@ -17,7 +17,6 @@ const products = [
         shipping: 'Free Shipping',
         location: 'United States'
     },
-    // Add more products as needed
 ]
 
 function ProductCardGrid() {
@@ -26,7 +25,7 @@ function ProductCardGrid() {
             {products.map(product => (
                 <Link 
                     key={product.id} 
-                    to={`/products/${product.id}`}  // Fix route path
+                    to={`/products/${product.id}`}
                     className='hover:no-underline'
                 >
                     <div className="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-shadow">

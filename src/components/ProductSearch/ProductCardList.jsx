@@ -4,7 +4,7 @@ import Iphone from './../../assets/iphone.png'
 import { GoDotFill } from "react-icons/go"
 import { Link } from 'react-router'
 
-// Sample product data - you can move this to a separate file later
+
 const products = [
     {
         id: 1,
@@ -15,7 +15,6 @@ const products = [
         rating: 4.5,
         orders: 154,
     },
-    // Add more products...
 ]
 
 
@@ -25,7 +24,7 @@ function ProductCardList() {
             {products.map(product => (
                 <Link 
                     key={product.id} 
-                    to={`/products/${product.id}`}  // Change from /product to /products
+                    to={`/products/${product.id}`}  
                     className='hover:no-underline'
                 >
                     <div className="flex gap-6 bg-white p-3 rounded border border-gray-200 hover:shadow-md transition-shadow">
