@@ -2,32 +2,39 @@ import React from 'react'
 import { Star, Heart, Share2 } from 'react-feather'
 import { GoDotFill } from "react-icons/go"
 import Iphone from './../../assets/iphone.png'
+import { MdOutlineMessage } from "react-icons/md";
+import { LuSailboat } from "react-icons/lu";
+import { MdOutlineVerifiedUser } from "react-icons/md";
+import { IoIosGlobe } from "react-icons/io";
+
+
+
 
 function ProductInfo() {
   return (
-    <div className="grid grid-cols-[300px_500px_1fr] gap-8 bg-white p-6 rounded-lg border border-gray-200 max-w-[1200px] mx-auto">
+    <div className="grid grid-cols-[1.5fr_3fr_1.5fr] gap-8 bg-white p-6 rounded-lg border border-gray-200 max-w-[1070px] mx-auto">
       {/* Left Section - Product Images */}
       <div className="space-y-4">
         {/* Main Image */}
-        <div className="border border-gray-200 rounded-lg p-4">
-          <img 
-            src={Iphone} 
-            alt="Product Image" 
+        <div className="border border-blue-400 rounded-lg p-4">
+          <img
+            src={Iphone}
+            alt="Product Image"
             className="w-full h-[300px] object-contain"
           />
         </div>
-        
+
         {/* Thumbnail Images */}
-        <div className="grid grid-cols-5 gap-2">
-          {[1,2,3,4,5].map((_, index) => (
-            <button 
+        <div className="grid grid-cols-6 gap-2">
+          {[1, 2, 3, 4, 5, 6].map((_, index) => (
+            <button
               key={index}
-              className="border border-gray-200 rounded p-2 hover:border-blue-500"
+              className={`border ${index === 0 ? 'border-gray-400' : 'border-gray-200'} rounded p-1 hover:border-blue-500`}
             >
-              <img 
-                src={Iphone} 
-                alt={`Thumbnail ${index + 1}`} 
-                className="w-full h-12 object-contain"
+              <img
+                src={Iphone}
+                alt={`Thumbnail ${index + 1}`}
+                className="w-full h-10 object-contain"
               />
             </button>
           ))}
@@ -35,15 +42,14 @@ function ProductInfo() {
       </div>
 
       {/* Middle Section - Product Details */}
-      <div className="space-y-4">
+      <div className="space-y-3">
         {/* Header */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-sm">Hot</span>
-            <span className="text-blue-600 text-sm">In stock</span>
+            <span className="text-green-600 text-sm flex items-center"><span className="text-green-500 mr-1">✓</span> In stock</span>
           </div>
           <h1 className="text-xl font-medium text-gray-800">
-            Canon Camera EOS 2000, Black 10x zoom
+            Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle
           </h1>
         </div>
 
@@ -51,114 +57,119 @@ function ProductInfo() {
         <div className="flex items-center gap-4 text-sm">
           <div className="flex items-center">
             <div className="flex text-yellow-400">
-              {[1,2,3,4,5].map((_, index) => (
-                <Star key={index} size={16} fill="currentColor" />
+              {[1, 2, 3, 4].map((_, index) => (
+                <Star key={index} size={16} fill="currentColor" stroke="none" />
               ))}
+              <Star size={16} fill="none" stroke="currentColor" />
             </div>
-            <span className="ml-1 text-yellow-600">4.5</span>
+            <span className="ml-1 text-yellow-600 font-medium">9.3</span>
           </div>
           <GoDotFill size={8} className="text-gray-300" />
-          <span className="text-gray-500">154 orders</span>
+          <div className="flex items-center gap-1">
+            <MdOutlineMessage size={15} className="text-gray-600" />
+            <span className="text-gray-500">32 reviews</span>
+          </div>
           <GoDotFill size={8} className="text-gray-300" />
-          <span className="text-green-600">Free shipping</span>
+          <div className="flex items-center gap-1">
+            <LuSailboat size={15} className='text-gray-600' />
+            <span className="text-gray-500">154 sold</span>
+          </div>
         </div>
 
         {/* Price Section */}
-        <div className="pt-4 border-t">
-          <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-semibold">$998.00</span>
-            <span className="text-gray-500 line-through">$1128.00</span>
-            <span className="text-sm text-red-600">-25%</span>
+        <div className=" rounded-lg">
+          <div className="flex items-center gap-2 bg-orange-50 p-3 rounded-md">
+            <div className="flex flex-col border-r-1 border-gray-400 pr-6">
+              <span className="text-red-500 text-2xl font-semibold">$98.00</span>
+              <span className="text-xs text-gray-500">50-100 pcs</span>
+            </div>
+            <div className="flex flex-col border-r-1 pr-6 border-gray-400">
+              <span className="text-2xl font-semibold">$90.00</span>
+              <span className="text-xs text-gray-500">100-700 pcs</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-semibold">$78.00</span>
+              <span className="text-xs text-gray-500">700+ pcs</span>
+            </div>
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex gap-3 pt-6">
-          <button className="px-10 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-            Buy now
-          </button>
-          <button className="px-10 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50">
-            Add to cart
-          </button>
-          <button className="p-2 border border-gray-200 rounded-md hover:bg-gray-50">
-            <Heart size={20} className="text-gray-600" />
-          </button>
-          <button className="p-2 border border-gray-200 rounded-md hover:bg-gray-50">
-            <Share2 size={20} className="text-gray-600" />
-          </button>
+        {/* Product Details */}
+        <div className="space-y-3">
+          <div className="flex border-b text-[15px] border-gray-300 pb-2">
+            <span className="w-32 text-gray-400">Price:</span>
+            <span className='text-[#505050]'>Negotiable</span>
+          </div>
+          <div className="flex text-[15px]">
+            <span className="w-32 text-gray-400">Type:</span>
+            <span className='text-[#505050]'>Classic shoes</span>
+          </div>
+          <div className="flex text-[15px]">
+            <span className="w-32 text-gray-400">Material:</span>
+            <span className='text-[#505050]'>Plastic material</span>
+          </div>
+          <div className="flex border-b border-gray-300 pb-2 text-[15px]">
+            <span className="w-32 text-gray-400">Design:</span>
+            <span className='text-[#505050]'>Modern nice</span>
+          </div>
+          <div className="flex text-[15px]">
+            <span className="w-32 text-gray-400">Customization:</span>
+            <span className='text-[#505050]'>Customized logo and design custom packages</span>
+          </div>
+          <div className="flex text-[15px]">
+            <span className="w-32 text-gray-500">Protection:</span>
+            <span className='text-[#505050]'>Refund Policy</span>
+          </div>
+          <div className="flex border-b border-gray-300 pb-2 text-[15px]">
+            <span className="w-32 text-gray-500">Warranty:</span>
+            <span className='text-[#505050]'>2 years full warranty</span>
+          </div>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="border-l border-gray-200 pl-8 space-y-6">
-        {/* Seller Info */}
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img 
-                src="https://via.placeholder.com/40" 
-                alt="Seller" 
-                className="w-10 h-10 rounded-full"
-              />
-              <div>
-                <h3 className="font-medium">Shoptech Store</h3>
-                <span className="text-sm text-gray-500">Member since 2021</span>
-              </div>
+      <div className="flex flex-col gap-4 min-w-[260px]">
+        {/* Supplier Card */}
+        <div className="p-4 border rounded-lg border-gray-200 shadow-sm space-y-4">
+          <div className="flex items-center gap-4 border-b border-gray-200 pb-4">
+            <div className="w-10 h-10 rounded bg-teal-100 flex items-center justify-center text-teal-600 font-semibold">
+              R
             </div>
-            <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50">
-              Visit Store
-            </button>
+            <div>
+              <div className="text-sm text-gray-500">Supplier</div>
+              <div className="font-medium">Guanjoi Trading LLC</div>
+            </div>
           </div>
 
-          {/* Seller Stats */}
-          <div className="grid grid-cols-3 gap-4 py-4 border-t border-b">
-            <div className="text-center">
-              <div className="text-lg font-medium">96%</div>
-              <div className="text-sm text-gray-500">Positive Seller Ratings</div>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <img src="https://flagcdn.com/w20/de.png" alt="Germany" className="w-4 h-3" />
+              Germany, Berlin
             </div>
-            <div className="text-center">
-              <div className="text-lg font-medium">85%</div>
-              <div className="text-sm text-gray-500">Ship on Time</div>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <MdOutlineVerifiedUser size={16} />
+              Verified Seller
             </div>
-            <div className="text-center">
-              <div className="text-lg font-medium">89%</div>
-              <div className="text-sm text-gray-500">Chat Response Rate</div>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <IoIosGlobe size={16} />
+              Worldwide shipping
             </div>
+          </div>
+
+          <div className="space-y-2 pt-2">
+            <button className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-medium">
+              Send inquiry
+            </button>
+            <button className="w-full text-center text-sm text-blue-600 border-2 border-gray-300 rounded py-2">
+              Seller's profile
+            </button>
           </div>
         </div>
 
-        {/* Shipping Info */}
-        <div className="space-y-4">
-          <h3 className="font-medium">Delivery & Shipping</h3>
-          <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <div className="p-2 bg-gray-50 rounded">
-                🚚
-              </div>
-              <div>
-                <div className="font-medium">Free Shipping</div>
-                <div className="text-sm text-gray-500">Estimated delivery: 3-5 days</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="p-2 bg-gray-50 rounded">
-                📦
-              </div>
-              <div>
-                <div className="font-medium">Secure Packaging</div>
-                <div className="text-sm text-gray-500">Safe & reliable packaging</div>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="p-2 bg-gray-50 rounded">
-                ✨
-              </div>
-              <div>
-                <div className="font-medium">30 Days Return</div>
-                <div className="text-sm text-gray-500">Money back guarantee</div>
-              </div>
-            </div>
-          </div>
+        {/* Save for Later */}
+        <div className="flex items-center justify-center gap-2 text-sm p-2">
+          <Heart size={18} className="text-blue-600" />
+          <span className="text-blue-600">Save for later</span>
         </div>
       </div>
     </div>

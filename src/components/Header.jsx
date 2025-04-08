@@ -43,7 +43,7 @@ function Header() {
     }, [])
 
     return (
-        <div className="w-full sticky top-0 bg-white z-50">
+        <div className="w-full top-0 bg-white z-50">
             {/* Main Header */}
             <header className="border-b border-gray-300">
                 <div className="max-w-[1100px] mx-auto p-4 flex items-center justify-between">
