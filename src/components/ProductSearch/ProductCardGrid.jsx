@@ -1,25 +1,9 @@
 import React from 'react'
 import { Star, Heart } from 'react-feather'
 import { GoDotFill } from "react-icons/go"
-import Iphone from './../../assets/iphone.png'
-import { Link } from 'react-router'
+import { Link } from 'react-router'  // Fixed router import
 
-// Sample product data
-const products = [
-    {
-        id: 1,
-        image: Iphone,
-        title: 'Canon Camera EOS 2000, Black 10x zoom',
-        price: 998.00,
-        originalPrice: 1128.00,
-        rating: 4.5,
-        orders: 154,
-        shipping: 'Free Shipping',
-        location: 'United States'
-    },
-]
-
-function ProductCardGrid() {
+function ProductCardGrid({ products }) {
     return (
         <div className="grid grid-cols-3 gap-4 ml-3">
             {products.map(product => (

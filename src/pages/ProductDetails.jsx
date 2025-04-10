@@ -1,8 +1,8 @@
 import React from 'react'
-import NavigationBar from '../components/ProductSearch/NavigationBar'
-import ProductInfo from '../components/ProductDetails/ProductInfo'
-import ProductDescription from '../components/ProductDetails/ProductDescription'
-import DiscountBanner from '../components/Cart/DiscountBanner'
+import NavigationBar from '../components/ProductSearch/NavigationBar.jsx'
+import ProductInfo from '../components/ProductDetails/ProductInfo.jsx'
+import ProductDescription from '../components/ProductDetails/ProductDescription.jsx'
+import DiscountBanner from '../components/Cart/DiscountBanner.jsx'
 
 function ProductDetails() {
   return (

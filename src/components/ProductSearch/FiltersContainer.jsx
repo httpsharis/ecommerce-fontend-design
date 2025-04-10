@@ -73,7 +73,16 @@ function FilterContainer({ onFilterChange }) {
   const handleCheckboxChange = (type, value, checked) => {
     if (checked) {
       onFilterChange({ type, value })
+    } else {
+      onFilterChange({ type: 'remove', filterType: type, value })
     }
+  }
+
+  const handleApplyPriceFilter = () => {
+    onFilterChange({
+      type: 'price',
+      value: `${priceRange.min}-${priceRange.max}`
+    })
   }
 
   return (
@@ -202,7 +211,10 @@ function FilterContainer({ onFilterChange }) {
               />
             </div>
 
-            <button className="w-full py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors">
+            <button 
+              className="w-full py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors"
+              onClick={handleApplyPriceFilter}
+            >
               Apply
             </button>
           </div>

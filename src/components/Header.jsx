@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router'
+import { useNavigate } from 'react-router'
 import LogoColored from './../assets/logo-colored.svg'
 import Profile from './../assets/Profile.svg'
 import Cart from './../assets/Cart.svg'
@@ -7,6 +9,9 @@ import Order from './../assets/Orders.svg'
 import Bars from './../assets/three-bars.svg'
 
 function Header() {
+
+    const navigate = useNavigate();
+
     const categories = [
         { id: 1, name: 'Hot Offers', link: '#' },
         { id: 2, name: 'Gift Boxes', link: '#' },
@@ -42,6 +47,22 @@ function Header() {
         return () => document.removeEventListener('mousedown', handleClickOutside)
     }, [])
 
+    // Add state for search query and selected category
+    const [searchQuery, setSearchQuery] = useState('')
+    const [selectedCategory, setSelectedCategory] = useState('all-category')
+
+    // Function to handle search
+    const handleSearch = () => {
+        if (!searchQuery.trim()) return
+        navigate(`/search?query=${encodeURIComponent(searchQuery)}&category=${selectedCategory}`);
+    }
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch()
+        }
+    }
+
     return (
         <div className="w-full top-0 bg-white z-50">
             {/* Main Header */}
@@ -49,25 +70,37 @@ function Header() {
                 <div className="max-w-[1100px] mx-auto p-4 flex items-center justify-between">
                     {/* Logo */}
                     <div className="w-32">
-                        <img src={LogoColored} alt="Logo" className="h-10" />
+                        <Link to="/"> {/* Wrap the logo with Link */}
+                            <img src={LogoColored} alt="Logo" className="h-10" />
+                        </Link>
                     </div>
 
-                    {/* Search */}
+                    {/* Search Section */}
                     <div className="flex-1 max-w-[500px] mx-8">
                         <div className="flex items-center border-2 border-[#0D6EFD] rounded-lg overflow-hidden">
                             <input
                                 type="text"
                                 placeholder="Search for products..."
                                 className="px-4 py-2 w-full outline-none text-gray-700 font-Inter text-sm"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                onKeyPress={handleKeyPress}
                             />
-                            <select className="w-32 px-3 py-2 bg-gray-50 border-l border-[#0D6EFD] font-Inter text-gray-700 text-sm cursor-pointer hover:bg-gray-100">
+                            <select 
+                                className="w-32 px-3 py-2 bg-gray-50 border-l border-[#0D6EFD] font-Inter text-gray-700 text-sm cursor-pointer hover:bg-gray-100"
+                                value={selectedCategory}
+                                onChange={(e) => setSelectedCategory(e.target.value)}
+                            >
                                 {searchCategories.map((category, index) => (
                                     <option key={index} value={category.toLowerCase().replace(/\s+/g, '-')}>
                                         {category}
                                     </option>
                                 ))}
                             </select>
-                            <button className="px-4 py-2 bg-blue-600 text-white font-Inter text-sm hover:bg-blue-700 transition-colors">
+                            <button 
+                                onClick={handleSearch}
+                                className="px-4 py-2 bg-blue-600 text-white font-Inter text-sm hover:bg-blue-700 transition-colors"
+                            >
                                 Search
                             </button>
                         </div>
@@ -76,7 +109,11 @@ function Header() {
                     {/* Navigation Icons */}
                     <nav className="flex items-center gap-6">
                         {['Profile', 'Order', 'Message', 'Cart'].map((item) => (
-                            <button key={item} className="hover:opacity-80 transition-opacity">
+                            <button 
+                                key={item} 
+                                className="hover:opacity-80 transition-opacity"
+                                onClick={() => item === 'Cart' && navigate('/cart')} // Navigate to cart
+                            >
                                 <img
                                     src={eval(item)}
                                     alt={item}
