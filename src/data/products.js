@@ -1,8 +1,31 @@
+import Bag from './../assets/bag.png'
+import BlueCoat from './../assets/coat.png'
+import Camera from './../assets/Camera.png'
+import Coffee from './../assets/coffee.png'
+import Decor from './../assets/decor.png'
+import Hanger from './../assets/hanger.png'
+import Iphone from './../assets/iphone.png'
+import Jacket from './../assets/jacket.png'
+import Jar from './../assets/jar.png'
+import Jar1 from './../assets/jar1.png'
+import Lamp from './../assets/lamp.png'
+import Laptop from './../assets/laptop.png'
+import Mattress from './../assets/mattress.png'
+import Mixer from './../assets/mixer.png'
+import Phone from './../assets/Phone.png'
+import Sofa from './../assets/sofa.png'
+import Watch from './../assets/Watch.png'
+import Thermos from './../assets/thermos.png'
+import PhoneHolder from './../assets/phoneholder.png'
+import DrillSet from './../assets/drillset.png'
+import ToolKit from './../assets/toolkit.png'
+import Huawei from './../assets/mate60pro.png'
+
 export const products = [
     // ========== Automobiles ==========
     {
         id: 1,
-        title: 'Car Floor Mats (Universal Fit)',
+        title: 'Car Accessories Organizer',
         category: 'Automobiles',
         brand: 'Generic',
         price: 29.99,
@@ -10,7 +33,7 @@ export const products = [
         rating: 4.6,
         condition: 'Brand new',
         orders: 234,
-        image: '/images/auto-mats.jpg'
+        image: Hanger
     },
     {
         id: 2,
@@ -22,7 +45,7 @@ export const products = [
         rating: 4.7,
         condition: 'Brand new',
         orders: 189,
-        image: '/images/led-headlights.jpg'
+        image: Lamp
     },
     {
         id: 3,
@@ -34,7 +57,7 @@ export const products = [
         rating: 4.4,
         condition: 'Brand new',
         orders: 567,
-        image: '/images/car-mount.jpg'
+        image: PhoneHolder
     },
     {
         id: 4,
@@ -46,7 +69,7 @@ export const products = [
         rating: 4.3,
         condition: 'Refurbished',
         orders: 298,
-        image: '/images/car-vacuum.jpg'
+        image: Mixer
     },
 
     // ========== Clothes and wear ==========
@@ -60,11 +83,11 @@ export const products = [
         rating: 4.5,
         condition: 'Brand new',
         orders: 892,
-        image: '/images/mens-jacket.jpg'
+        image: Jacket
     },
     {
         id: 6,
-        title: "Women's Running Shoes",
+        title: "Designer Handbag",
         category: 'Clothes and wear',
         brand: 'Nike',
         price: 54.99,
@@ -72,11 +95,11 @@ export const products = [
         rating: 4.8,
         condition: 'Brand new',
         orders: 1203,
-        image: '/images/womens-shoes.jpg'
+        image: Bag
     },
     {
         id: 7,
-        title: "Designer Sunglasses",
+        title: "Winter Blue Coat",
         category: 'Clothes and wear',
         brand: 'Ray-Ban',
         price: 24.99,
@@ -84,11 +107,11 @@ export const products = [
         rating: 4.6,
         condition: 'Brand new',
         orders: 784,
-        image: '/images/sunglasses.jpg'
+        image: BlueCoat
     },
     {
         id: 8,
-        title: "Winter Wool Scarf",
+        title: "Luxury Wristwatch",
         category: 'Clothes and wear',
         brand: 'Burberry',
         price: 19.99,
@@ -96,7 +119,7 @@ export const products = [
         rating: 4.7,
         condition: 'Brand new',
         orders: 432,
-        image: '/images/scarf.jpg'
+        image: Watch
     },
 
     // ========== Computer and tech ==========
@@ -109,7 +132,7 @@ export const products = [
         originalPrice: 1199.99,
         rating: 4.9,
         condition: 'Brand new',
-        image: '/images/s23-ultra.jpg'
+        image: Phone
     },
     {
         id: 10,
@@ -120,19 +143,19 @@ export const products = [
         originalPrice: 1299.99,
         rating: 4.8,
         condition: 'Brand new',
-        image: '/images/iphone15.jpg'
+        image: Iphone
     },
     {
         id: 11,
-        title: 'Xiaomi Poco X6 Pro',
+        title: 'Professional DSLR Camera',
         category: 'Computer and tech',
-        brand: 'Xiaomi',
+        brand: 'Canon',
         price: 299.99,
         originalPrice: 399.99,
         rating: 4.7,
         condition: 'Brand new',
         orders: 278,
-        image: '/images/poco-x6.jpg'
+        image: Camera
     },
     {
         id: 12,
@@ -144,7 +167,7 @@ export const products = [
         rating: 4.6,
         condition: 'Brand new',
         orders: 96,
-        image: '/images/mate60.jpg'
+        image: Huawei
     },
 
     // ========== Home interiors ==========
@@ -158,7 +181,7 @@ export const products = [
         rating: 4.5,
         condition: 'Brand new',
         orders: 345,
-        image: '/images/table-lamp.jpg'
+        image: Lamp
     },
     {
         id: 14,
@@ -170,11 +193,11 @@ export const products = [
         rating: 4.8,
         condition: 'Brand new',
         orders: 123,
-        image: '/images/sofa-set.jpg'
+        image: Sofa
     },
     {
         id: 15,
-        title: 'Wooden Dining Table',
+        title: 'Premium Mattress',
         category: 'Home interiors',
         brand: 'Wayfair',
         price: 299.99,
@@ -182,7 +205,7 @@ export const products = [
         rating: 4.7,
         condition: 'Brand new',
         orders: 89,
-        image: '/images/dining-table.jpg'
+        image: Mattress
     },
     {
         id: 16,
@@ -194,7 +217,7 @@ export const products = [
         rating: 4.6,
         condition: 'Brand new',
         orders: 234,
-        image: '/images/wall-art.jpg'
+        image: Decor
     },
 
     // ========== Tools & equipment ==========
@@ -208,7 +231,7 @@ export const products = [
         rating: 4.7,
         condition: 'Brand new',
         orders: 189,
-        image: '/images/tool-kit.jpg'
+        image: ToolKit
     },
     {
         id: 18,
@@ -220,11 +243,11 @@ export const products = [
         rating: 4.8,
         condition: 'Brand new',
         orders: 456,
-        image: '/images/drill-set.jpg'
+        image: DrillSet
     },
     {
         id: 19,
-        title: 'Garden Tool Set',
+        title: 'Premium Coffee Maker',
         category: 'Tools & equipment',
         brand: 'Fiskars',
         price: 29.99,
@@ -232,25 +255,25 @@ export const products = [
         rating: 4.6,
         condition: 'Brand new',
         orders: 321,
-        image: '/images/garden-tools.jpg'
+        image: Coffee
     },
     {
         id: 20,
-        title: 'Welding Machine',
-        category: 'Tools & equipment',
-        brand: 'Lincoln Electric',
+        title: 'High-Performance Laptop',
+        category: 'Computer and tech',
+        brand: 'Dell',
         price: 299.99,
         originalPrice: 399.99,
         rating: 4.7,
         condition: 'Brand new',
         orders: 78,
-        image: '/images/welding-machine.jpg'
+        image: Laptop
     },
 
     // ========== Sports and outdoor ==========
     {
         id: 21,
-        title: 'Camping Tent 4-Person',
+        title: 'Insulated Thermos Flask',
         category: 'Sports and outdoor',
         brand: 'Coleman',
         price: 129.99,
@@ -258,31 +281,31 @@ export const products = [
         rating: 4.6,
         condition: 'Brand new',
         orders: 234,
-        image: '/images/tent.jpg'
+        image: Thermos
     },
     {
         id: 22,
-        title: 'Mountain Bike',
-        category: 'Sports and outdoor',
+        title: 'Glass Storage Jar',
+        category: 'Home interiors',
         brand: 'Trek',
         price: 499.99,
         originalPrice: 599.99,
         rating: 4.8,
         condition: 'Brand new',
         orders: 89,
-        image: '/images/mountain-bike.jpg'
+        image: Jar
     },
     {
         id: 23,
-        title: 'Fishing Rod Set',
-        category: 'Sports and outdoor',
+        title: 'Decorative Glass Container',
+        category: 'Home interiors',
         brand: 'Shimano',
         price: 79.99,
         originalPrice: 99.99,
         rating: 4.7,
         condition: 'Brand new',
         orders: 123,
-        image: '/images/fishing-rod.jpg'
+        image: Jar1
     },
     {
         id: 24,

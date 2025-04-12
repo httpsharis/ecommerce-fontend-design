@@ -1,9 +1,9 @@
 import React from 'react'
-import Watch from './../assets/Watch.png'
-import Laptop from './../assets/Laptop.png'
-import Headphones from './../assets/Headphones.png'
-import Camera from './../assets/Camera.png'
-import SmartPhones from './../assets/Phone.png'
+import Watch from '../../assets/Watch.png'
+import Laptop from '../../assets/Laptop.png'
+import Headphones from '../../assets/Headphones.png'
+import Camera from '../../assets/Camera.png'
+import SmartPhones from '../../assets/Phone.png'
 
 function DiscountCard() {
 
@@ -17,7 +17,7 @@ function DiscountCard() {
     ]
 
     return (
-        <div className="flex-1 bg-white border border-gray-200 border-l-0 h-full p-3">
+        <div className="flex-1 bg-white border border-gray-200 border-l-0 h-full p-3 cursor-pointer">
             <div className="grid grid-cols-5 h-full">
                 {products.map((product, index) => (
                     <div 

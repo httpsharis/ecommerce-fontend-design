@@ -6,22 +6,17 @@ import ProductCardList from '../components/ProductSearch/ProductCardList.jsx'
 import Paginate from '../components/ProductSearch/Paginate.jsx'
 import ProductCardGrid from '../components/ProductSearch/ProductCardGrid.jsx'
 import FilterTags from '../components/ProductSearch/FilterTags'
-import StickyBar from '../components/ProductSearch/StickyBar';
-
-// Add this import at the top
+import { useNavigate } from 'react-router'
 import { products } from '../data/products'
 
 function ProductSearch() {
   const [viewType, setViewType] = useState('grid')
   const [selectedFilters, setSelectedFilters] = useState([])
+  const navigate = useNavigate()
 
   const searchParams = new URLSearchParams(window.location.search)
-  // In your ProductSearch component's URL parameter handling:
   const searchQuery = (searchParams.get('query') || '').toLowerCase()
   const searchCategory = searchParams.get('category') || 'all-category'
-
-  // Remove this duplicate array
-  // const [products] = useState([...])
   
   // Use the imported products directly
   const filteredProducts = products.filter(product => {
@@ -69,9 +64,9 @@ function ProductSearch() {
     )
   }
 
-  const handleAddToCart = (product, quantity) => {
-      // Logic to add the product to the cart
-      console.log(`Added ${quantity} of ${product.title} to the cart.`);
+  // Add a function to handle product click
+  const handleProductClick = (productId) => {
+    navigate(`/products/${productId}`);
   };
 
   return (
@@ -100,18 +95,19 @@ function ProductSearch() {
             {/* Products Grid/List */}
             <div className='w-full'>
               {viewType === 'grid' ? (
-                <ProductCardGrid products={filteredProducts} />
+                <ProductCardGrid 
+                  products={filteredProducts} 
+                  onProductClick={handleProductClick}
+                />
               ) : (
-                <ProductCardList products={filteredProducts}/>
+                <ProductCardList 
+                  products={filteredProducts}
+                  onProductClick={handleProductClick}
+                />
               )}
             </div>
 
             <Paginate />
-
-            {/* Ensure StickyBar is rendered only if there are products */}
-            {filteredProducts.length > 0 && (
-              <StickyBar product={filteredProducts[0]} onAddToCart={handleAddToCart} />
-            )}
           </div>
         </div>
       </div>

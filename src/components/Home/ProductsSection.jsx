@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button'
-import ProductBg from './../assets/ProductS1.png'
+import ProductBg from '../../assets/ProductS1.png'
 import ProductsCard from './ProductsCard'
 
 function ProductsSection() {
@@ -23,7 +23,7 @@ function ProductsSection() {
             </div>
             
             {/* Product Cards */}
-            <div className='flex-1'>
+            <div className='flex-1 cursor-pointer'>
                 <ProductsCard />
             </div>
         </div>

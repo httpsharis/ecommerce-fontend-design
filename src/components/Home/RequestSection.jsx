@@ -1,5 +1,5 @@
 import React from 'react'
-import RequestBG from './../assets/requestbg.png'
+import RequestBG from '../../assets/requestbg.png'
 
 function RequestSection() {
   return (

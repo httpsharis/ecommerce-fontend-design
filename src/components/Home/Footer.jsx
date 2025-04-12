@@ -1,12 +1,12 @@
 import React from 'react'
-import LogoColored from './../assets/logo-colored.svg'
-import facebook from './../assets/social/facebook3.svg'
-import instagram from './../assets/social/instagram3.svg'
-import linkedin from './../assets/social/linkedin3.svg'
-import twitter from './../assets/social/twitter3.svg'
-import youtube from './../assets/social/youtube3.svg'
-import PlaystoreBtn from './../assets/playstorebtn.svg'
-import AppStoreBtn from './../assets/appstorebtn.svg'
+import LogoColored from '../../assets/logo-colored.svg'
+import facebook from '../../assets/social/facebook3.svg'
+import instagram from '../../assets/social/instagram3.svg'
+import linkedin from '../../assets/social/linkedin3.svg'
+import twitter from '../../assets/social/twitter3.svg'
+import youtube from '../../assets/social/youtube3.svg'
+import PlaystoreBtn from '../../assets/playstorebtn.svg'
+import AppStoreBtn from '../../assets/appstorebtn.svg'
 
 function Footer() {
   return (
@@ -19,6 +19,7 @@ function Footer() {
             <p className="mt-4 text-[13px] leading-5 text-[#505050]">
               Best information about the company goes here but now lorem ipsum is
             </p>
+            {/* Social Media Links */}
             <div className="flex items-center gap-3 mt-4">
               <a href="#" className="hover:opacity-80 transition-opacity">
                 <img src={facebook} alt="Facebook" className="w-8 h-8" />

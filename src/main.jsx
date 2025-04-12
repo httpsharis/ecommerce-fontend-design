@@ -6,21 +6,26 @@ import { createRoutesFromElements, createBrowserRouter, RouterProvider, Route } 
 import Home from './pages/Home.jsx'
 import ProductSearch from './pages/ProductSearch.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
-import Cart from './pages/Cart.jsx'
+import Cart from './pages/cart.jsx'
+import { GlobalProvider } from "./context/GlobalContext";
 
+// Create router with routes
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route path='' element={<Home />} />
       <Route path="/search" element={<ProductSearch />} />
-      <Route path='/products/:id' element={<ProductDetails />} />
+      <Route path="/products/:id" element={<ProductDetails />} />
       <Route path='/cart' element={<Cart />} />
     </Route>
   )
 )
 
+// Render the application
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+  <GlobalProvider>
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  </GlobalProvider>,
 )

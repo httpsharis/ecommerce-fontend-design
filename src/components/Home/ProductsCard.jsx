@@ -1,13 +1,14 @@
 import React from 'react'
-import Sofa from './../assets/sofa.png'
-import Jar from './../assets/jar.png'
-import Lamp from './../assets/lamp.png'
-import Mixer from './../assets/mixer.png'
-import Decor from './../assets/decor.png'
-import Hanger from './../assets/hanger.png'
-import CoffeMachine from './../assets/coffee.png'
-import Mattress from './../assets/mattress.png'
+import Sofa from '../../assets/sofa.png'
+import Jar from '../../assets/jar.png'
+import Lamp from '../../assets/lamp.png'
+import Mixer from '../../assets/mixer.png'
+import Decor from '../../assets/decor.png'
+import Hanger from '../../assets/hanger.png'
+import CoffeMachine from '../../assets/coffee.png'
+import Mattress from '../../assets/mattress.png'
 
+// Array of product objects with name, price, and image
 const products = [
     { 
         name: 'Soft Chair', 
@@ -51,6 +52,7 @@ const products = [
     }
 ]
 
+// Functional component to display product cards
 function ProductsCard() {
     return (
         <div className="flex-1 bg-white border border-gray-200 border-l-0 border-b-2 w-[785px] ">

@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router'
-import { useNavigate } from 'react-router'
-import LogoColored from './../assets/logo-colored.svg'
-import Profile from './../assets/Profile.svg'
-import Cart from './../assets/Cart.svg'
-import Message from './../assets/Message.svg'
-import Order from './../assets/Orders.svg'
-import Bars from './../assets/three-bars.svg'
+import { Link } from 'react-router' 
+import { useNavigate } from 'react-router' 
+import LogoColored from '../../assets/logo-colored.svg'
+import Profile from '../../assets/Profile.svg'
+import Cart from '../../assets/Cart.svg'
+import Message from '../../assets/Message.svg'
+import Order from '../../assets/Orders.svg'
+import Bars from '../../assets/three-bars.svg'
 
 function Header() {
 
     const navigate = useNavigate();
 
+    // Define categories for the navigation bar
     const categories = [
         { id: 1, name: 'Hot Offers', link: '#' },
         { id: 2, name: 'Gift Boxes', link: '#' },
@@ -21,7 +22,9 @@ function Header() {
     ]
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    // Define categories for the dropdown menu
     const dropdownCategories = ['Automobiles', 'Clothes and wear', 'Home interiors', 'Computer and tech', 'tools & equipment', 'Spots and outdoor', ]
+    // Define categories for the search dropdown
     const searchCategories = [
         'All Category',
         'Automobiles',
@@ -37,6 +40,7 @@ function Header() {
     const dropdownRef = useRef(null)
 
     useEffect(() => {
+        // Close the dropdown menu if clicked outside
         function handleClickOutside(event) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setIsDropdownOpen(false)
@@ -47,16 +51,17 @@ function Header() {
         return () => document.removeEventListener('mousedown', handleClickOutside)
     }, [])
 
-    // Add state for search query and selected category
+    // State for search query and selected category
     const [searchQuery, setSearchQuery] = useState('')
     const [selectedCategory, setSelectedCategory] = useState('all-category')
 
-    // Function to handle search
+    // Function to handle search action
     const handleSearch = () => {
         if (!searchQuery.trim()) return
         navigate(`/search?query=${encodeURIComponent(searchQuery)}&category=${selectedCategory}`);
     }
 
+    // Handle Enter key press for search
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             handleSearch()
@@ -130,9 +135,9 @@ function Header() {
                 <div className="max-w-[1100px] mx-auto px-4">
                     <div className="flex items-center justify-between h-12">
                         {/* Left: Categories */}
-                        <div className="flex items-center space-x-8">
+                        <div className="flex items-center space-x-8 cursor-pointer">
                             {/* All Categories Button with Dropdown */}
-                            <div ref={dropdownRef} className="relative">
+                            <div ref={dropdownRef} className="relative cursor-pointer">
                                 <button 
                                     className="flex items-center gap-2 font-medium hover:text-blue-600 transition-colors group py-3"
                                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -140,9 +145,9 @@ function Header() {
                                     <img
                                         src={Bars}
                                         alt="Categories"
-                                        className="w-6 h-6 group-hover:opacity-80"
+                                        className="w-6 h-6 group-hover:opacity-80 cursor-pointer"
                                     />
-                                    <span>All categories</span>
+                                    <span className='cursor-pointer'>All categories</span>
                                 </button>
 
                                 {/* Dropdown Menu */}
@@ -167,7 +172,7 @@ function Header() {
                                     <button
                                         key={id}
                                         className="text-[15px] text-gray-600 hover:text-blue-600 
-                                                  transition-colors py-3 relative group"
+                                                  transition-colors py-3 relative group cursor-pointer"
                                     >
                                         {name}
                                         {/* Hover Indicator */}
@@ -182,10 +187,10 @@ function Header() {
 
                         {/* Right: Language and Shipping */}
                         <div className="flex items-center gap-4">
-                            <select className="bg-transparent text-sm">
+                            <select className="bg-transparent text-sm cursor-pointer">
                                 <option>English, USD</option>
                             </select>
-                            <select className="bg-transparent text-sm">
+                            <select className="bg-transparent text-sm cursor-pointer">
                                 <option>Ship to</option>
                             </select>
                         </div>

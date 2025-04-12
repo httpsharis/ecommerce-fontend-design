@@ -1,9 +1,9 @@
 import React from 'react'
-import Hero from '../components/Hero'
-import DiscountSection from '../components/DiscountSection'
-import ProductsSection from '../components/ProductsSection'
-import GedgetSection from '../components/GedgetSection'
-import RequestSection from '../components/RequestSection'
+import Hero from '../components/Home/Hero'
+import DiscountSection from '../components/Home/DiscountSection'
+import ProductsSection from '../components/Home/ProductsSection'
+import GedgetSection from '../components/Home/GedgetSection'
+import RequestSection from '../components/Home/RequestSection'
 
 
 function Home() {

@@ -10,7 +10,7 @@ import { IoIosGlobe } from "react-icons/io";
 
 
 
-function ProductInfo() {
+function ProductInfo({ onSaveForLater }) {
   return (
     <div className="grid grid-cols-[1.5fr_3fr_1.5fr] gap-8 bg-white p-6 rounded-lg border border-gray-200 max-w-[1070px] mx-auto">
       {/* Left Section - Product Images */}
@@ -167,7 +167,10 @@ function ProductInfo() {
         </div>
 
         {/* Save for Later */}
-        <div className="flex items-center justify-center gap-2 text-sm p-2">
+        <div 
+          className="flex items-center justify-center gap-2 text-sm p-2 cursor-pointer"
+          onClick={() => onSaveForLater({ id: 1, name: 'Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle', image: Iphone })}
+        >
           <Heart size={18} className="text-blue-600" />
           <span className="text-blue-600">Save for later</span>
         </div>

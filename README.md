@@ -1,12 +1,47 @@
-# React + Vite
+# eCommerce Frontend Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the eCommerce Frontend project, a modern and responsive web application built using React and Tailwind CSS. This project is part of an internship assignment aimed at creating a user-friendly online shopping experience.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Live Demo Link](#) *(optional section if not deployed yet)*
 
-## Expanding the ESLint configuration
+## 📖 Description
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is a frontend application for an eCommerce website. It provides users with a seamless shopping experience, featuring product listings, detailed product pages, and a search functionality to find products easily.
+
+## 🛠 Features
+
+- Product Listing
+- Search Functionality
+- Product Detail Page
+- Category Filters
+- Responsive Design
+
+## 🧰 Tech Stack
+
+- **React**: JavaScript library for building user interfaces
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **Vite**: Next Generation Frontend Tooling
+
+## 📸 Screenshots
+
+*(Placeholder for screenshots)*
+
+## 📂 Folder Structure
+
+The project is organized as follows:
+
+- **src**: Contains all the source code
+  - **components**: Reusable components like Header, Footer, etc.
+  - **pages**: Different pages of the application (Home, Product Details, etc.)
+  - **assets**: Images and other static assets
+  - **styles**: Global styles and Tailwind configurations
+
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/ecommerce-frontend.git
