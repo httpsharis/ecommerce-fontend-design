@@ -85,7 +85,7 @@ src/
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is an Internship Program provided by DeveloperHub.co which is situated in Islamabad.
 
 ## 👥 Contributors
 
