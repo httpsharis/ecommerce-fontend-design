@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'react-feather'
 
 function Paginate() {
   const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = 100 // This should come from your data/props
+  const totalPages = 100 
 
   const pages = Array.from({ length: 5 }, (_, i) => {
     const pageNum = currentPage + i - 2

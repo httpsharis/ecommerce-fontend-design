@@ -4,30 +4,30 @@ import ProductInfo from '../components/ProductDetails/ProductInfo.jsx'
 import ProductDescription from '../components/ProductDetails/ProductDescription.jsx'
 import DiscountBanner from '../components/Cart/DiscountBanner.jsx'
 import { Heart } from 'react-feather'
-import { useGlobal } from "./../context/GlobalContext.jsx"; // Import useGlobal hook
-import { products } from './../data/products.js'; // Import products data
+import { useGlobal } from "./../context/GlobalContext.jsx";
+import { products } from './../data/products.js'; 
 
-function ProductDetails({ productId }) { // Ensure productId is passed as a prop
-  const { addToCart, saveForLater } = useGlobal(); // Destructure functions from useGlobal
+function ProductDetails({ productId }) { 
+  const { addToCart, saveForLater } = useGlobal(); 
 
   // Find the product by ID
   const product = products.find(p => p.id === productId);
 
   const handleAddToCart = () => {
     if (product) {
-      console.log('Adding product to cart:', product); // Log product details
-      addToCart({ ...product, quantity: 1 }); // Add product to cart with quantity
+      console.log('Adding product to cart:', product); 
+      addToCart({ ...product, quantity: 1 }); 
     } else {
-      console.error('Product not found'); // Log error if product is not found
+      console.error('Product not found'); 
     }
   };
 
   const handleSaveForLater = () => {
     if (product) {
-      console.log('Saving product for later:', product); // Log product details
-      saveForLater(product); // Save product for later
+      console.log('Saving product for later:', product); 
+      saveForLater(product); 
     } else {
-      console.error('Product not found'); // Log error if product is not found
+      console.error('Product not found'); 
     }
   };
 

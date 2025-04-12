@@ -75,7 +75,7 @@ function Header() {
                 <div className="max-w-[1100px] mx-auto p-4 flex items-center justify-between">
                     {/* Logo */}
                     <div className="w-32">
-                        <Link to="/"> {/* Wrap the logo with Link */}
+                        <Link to="/"> 
                             <img src={LogoColored} alt="Logo" className="h-10" />
                         </Link>
                     </div>
@@ -117,7 +117,7 @@ function Header() {
                             <button 
                                 key={item} 
                                 className="hover:opacity-80 transition-opacity"
-                                onClick={() => item === 'Cart' && navigate('/cart')} // Navigate to cart
+                                onClick={() => item === 'Cart' && navigate('/cart')}
                             >
                                 <img
                                     src={eval(item)}

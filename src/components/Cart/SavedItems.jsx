@@ -16,7 +16,7 @@ function SavedItems({ savedItems, onMoveToCart }) {
               <span className="font-semibold text-[15px]">${product.price}</span>
               <p className="text-[14px] text-gray-600 line-clamp-2">{product.name}</p>
               <button 
-                onClick={() => onMoveToCart(product)} // Use handler from props
+                onClick={() => onMoveToCart(product)}
                 className="text-blue-600 text-sm border border-gray-200 rounded p-2 hover:bg-gray-50 w-full flex items-center justify-center gap-2"
               >
                 Move to cart

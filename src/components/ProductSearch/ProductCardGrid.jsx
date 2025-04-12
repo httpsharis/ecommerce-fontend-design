@@ -1,7 +1,7 @@
 import React from 'react'
 import { Star, Heart } from 'react-feather'
 import { GoDotFill } from "react-icons/go"
-import { Link } from 'react-router'  // Fixed router import
+import { Link } from 'react-router'  
 
 function ProductCardGrid({ products }) {
     return (

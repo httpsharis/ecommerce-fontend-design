@@ -5,7 +5,7 @@ import CartServices from '../components/Cart/CartServices'
 import DiscountBanner from '../components/Cart/DiscountBanner'
 import SavedItems from '../components/Cart/SavedItems'
 import { useGlobal } from "../context/GlobalContext"
-import { products } from '../data/products.js' // Import products data
+import { products } from '../data/products.js' 
 
 function Cart() {
   const { cartItems, savedItems, addToCart, setCartItems } = useGlobal();

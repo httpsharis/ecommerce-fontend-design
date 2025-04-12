@@ -7,7 +7,7 @@ const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
   
   const [cartItems, setCartItems] = useState([]);
-  const [savedItems, setSavedItems] = useState([]); // State for saved items
+  const [savedItems, setSavedItems] = useState([]); 
 
   const addToCart = (product) => {
     setCartItems((prevItems) => [...prevItems, product]);
@@ -23,7 +23,7 @@ export const GlobalProvider = ({ children }) => {
       savedItems,
       addToCart,
       saveForLater,
-      setCartItems, // ✅ this line is necessary
+      setCartItems, 
     }}>
       {children}
     </GlobalContext.Provider>

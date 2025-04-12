@@ -1,5 +1,5 @@
 import React from 'react'
-import { Star, Heart, Share2 } from 'react-feather'
+import { Star, Heart } from 'react-feather'
 import { GoDotFill } from "react-icons/go"
 import Iphone from './../../assets/iphone.png'
 import { MdOutlineMessage } from "react-icons/md";
@@ -167,7 +167,7 @@ function ProductInfo({ onSaveForLater }) {
         </div>
 
         {/* Save for Later */}
-        <div 
+        <div
           className="flex items-center justify-center gap-2 text-sm p-2 cursor-pointer"
           onClick={() => onSaveForLater({ id: 1, name: 'Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle', image: Iphone })}
         >

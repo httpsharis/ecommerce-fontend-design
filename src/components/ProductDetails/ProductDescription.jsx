@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import RelatedProducts from './RelatedProducts' // Import the new component
+import RelatedProducts from './RelatedProducts'
 
 function ProductDescription() {
   const [activeTab, setActiveTab] = useState('description')
@@ -86,11 +86,10 @@ function ProductDescription() {
             {Object.keys(tabData).map((tab) => (
               <button
                 key={tab}
-                className={`px-6 py-3 text-sm font-medium ${
-                  activeTab === tab
+                className={`px-6 py-3 text-sm font-medium ${activeTab === tab
                     ? 'text-blue-600 border-b-2 border-blue-600'
                     : 'text-gray-500 hover:text-gray-700'
-                }`}
+                  }`}
                 onClick={() => setActiveTab(tab)}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}

@@ -10,13 +10,13 @@ function RelatedProducts() {
   ]
 
   return (
-    <div className="w-[220px]"> {/* Added fixed width */}
+    <div className="w-[220px]"> 
       <h3 className="text-lg font-semibold mb-4">You may like</h3>
       <ul className="space-y-4">
         {products.map((product, index) => (
-          <li key={index} className="flex items-start gap-3"> {/* Changed to items-start and fixed typo */}
-            <img src={product.image} alt={product.name} className="w-15 h-15 object-cover rounded" /> {/* Reduced image size */}
-            <div className="min-w-0"> {/* Added min-w-0 to enable text truncation */}
+          <li key={index} className="flex items-start gap-3"> 
+            <img src={product.image} alt={product.name} className="w-15 h-15 object-cover rounded" /> 
+            <div className="min-w-0">
               <p className="text-sm font-medium text-gray-800 justify-items-start">{product.name}</p>
               <p className="text-sm text-gray-500">{product.price}</p>
             </div>
