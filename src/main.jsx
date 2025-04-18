@@ -13,12 +13,15 @@ import { GlobalProvider } from "./context/GlobalContext";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
-      <Route path='' element={<Home />} />
+      <Route index element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/search" element={<ProductSearch />} />
       <Route path="/products/:id" element={<ProductDetails />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path="*" element={<Home />} />
     </Route>
-  )
+  ),
+  { basename: "/ecommerce-fontend-design" }
 )
 
 // Render the application
@@ -27,5 +30,5 @@ createRoot(document.getElementById('root')).render(
     <StrictMode>
       <RouterProvider router={router} />
     </StrictMode>
-  </GlobalProvider>,
+  </GlobalProvider>
 )
