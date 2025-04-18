@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router' 
 import { useNavigate } from 'react-router' 
 import LogoColored from '../../assets/logo-colored.svg'
-import Profile from '../../assets/Profile.svg'
-import Cart from '../../assets/Cart.svg'
-import Message from '../../assets/Message.svg'
-import Order from '../../assets/Orders.svg'
+import ProfileIcon from '../../assets/Profile.svg'
+import CartIcon from '../../assets/Cart.svg'
+import MessageIcon from '../../assets/Message.svg'
+import OrderIcon from '../../assets/Orders.svg'
 import Bars from '../../assets/three-bars.svg'
 
 function Header() {
@@ -113,19 +113,21 @@ function Header() {
 
                     {/* Navigation Icons */}
                     <nav className="flex items-center gap-6">
-                        {['Profile', 'Order', 'Message', 'Cart'].map((item) => (
-                            <button 
-                                key={item} 
-                                className="hover:opacity-80 transition-opacity"
-                                onClick={() => item === 'Cart' && navigate('/cart')}
-                            >
-                                <img
-                                    src={eval(item)}
-                                    alt={item}
-                                    className="w-9 h-9"
-                                />
-                            </button>
-                        ))}
+                        <button className="hover:opacity-80 transition-opacity">
+                            <img src={ProfileIcon} alt="Profile" className="w-9 h-9" />
+                        </button>
+                        <button className="hover:opacity-80 transition-opacity">
+                            <img src={OrderIcon} alt="Orders" className="w-9 h-9" />
+                        </button>
+                        <button className="hover:opacity-80 transition-opacity">
+                            <img src={MessageIcon} alt="Message" className="w-9 h-9" />
+                        </button>
+                        <button 
+                            className="hover:opacity-80 transition-opacity"
+                            onClick={() => navigate('/cart')}
+                        >
+                            <img src={CartIcon} alt="Cart" className="w-9 h-9" />
+                        </button>
                     </nav>
                 </div>
             </header>
