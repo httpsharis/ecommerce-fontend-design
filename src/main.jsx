@@ -6,7 +6,7 @@ import { createRoutesFromElements, createBrowserRouter, RouterProvider, Route } 
 import Home from './pages/Home.jsx'
 import ProductSearch from './pages/ProductSearch.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
-import Cart from './pages/cart.jsx'
+import Cart from './pages/Cart.jsx'
 import { GlobalProvider } from "./context/GlobalContext";
 
 // Create router with routes
