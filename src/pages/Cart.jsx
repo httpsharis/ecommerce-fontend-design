@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import CartProducts from '../components/Cart/CartProducts'
-import CartSummary from '../components/Cart/CartSummary'
-import CartServices from '../components/Cart/CartServices'
-import DiscountBanner from '../components/Cart/DiscountBanner'
-import SavedItems from '../components/Cart/SavedItems'
-import { useGlobal } from "../context/GlobalContext"
+import CartProducts from '../components/Cart/CartProducts.jsx'
+import CartSummary from '../components/Cart/CartSummary.jsx'
+import CartServices from '../components/Cart/CartServices.jsx'
+import DiscountBanner from '../components/Cart/DiscountBanner.jsx'
+import SavedItems from '../components/Cart/SavedItems.jsx'
+import { useGlobal } from "../context/GlobalContext.jsx"
 import { products } from '../data/products.js' 
 
 function Cart() {
