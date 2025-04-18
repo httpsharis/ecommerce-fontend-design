@@ -15,13 +15,14 @@ const router = createBrowserRouter(
     <Route path='/' element={<App />}>
       <Route index element={<Home />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/ecommerce-fontend-design/home" element={<Home />} />
+      <Route path="/ecommerce-fontend-design" element={<Home />} />
       <Route path="/search" element={<ProductSearch />} />
       <Route path="/products/:id" element={<ProductDetails />} />
       <Route path='/cart' element={<Cart />} />
       <Route path="*" element={<Home />} />
     </Route>
-  ),
-  { basename: "/ecommerce-fontend-design" }
+  )
 )
 
 // Render the application
