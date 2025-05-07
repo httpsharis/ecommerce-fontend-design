@@ -1,19 +1,20 @@
 # eCommerce Frontend Project
 
-Welcome to the eCommerce Frontend project, a modern and responsive web application built using React and Tailwind CSS. This project delivers a comprehensive online shopping experience with intuitive navigation and seamless functionality.
+Welcome to the eCommerce Frontend project, a fully responsive web application built using React and Tailwind CSS. This project delivers a comprehensive online shopping experience with intuitive navigation and seamless functionality across all devices.
 
 ## 📖 Description
 
-This eCommerce platform provides users with a complete shopping journey from product discovery to checkout. The application features a clean, responsive design that works across all devices, ensuring customers can shop conveniently from anywhere. Built with React and styled with Tailwind CSS, the codebase is modular, maintainable, and follows modern frontend development practices.
+This eCommerce platform provides users with a complete shopping journey from product discovery to checkout. The application features a clean, responsive design that adapts perfectly to mobile, tablet, and desktop views, ensuring customers can shop conveniently from anywhere. Built with React and styled with Tailwind CSS, the codebase is modular, maintainable, and follows modern frontend development practices.
 
 ## 🛠 Key Features
 
+- **Responsive Design**: Fully optimized for all screen sizes with dedicated mobile and desktop layouts
 - **Product Discovery**: Browse products by category with advanced filtering options
 - **Search Functionality**: Find products quickly with an intuitive search interface
 - **Product Details**: View comprehensive product information with high-quality images
 - **Shopping Cart**: Add products to cart with quantity management
 - **Save for Later**: Save products for future consideration
-- **Responsive Design**: Optimized for all screen sizes from mobile to desktop
+- **Mobile Navigation**: Smooth drawer-based navigation for mobile users
 
 ## 🧰 Technology Stack
 

@@ -55,13 +55,13 @@ const products = [
 // Functional component to display product cards
 function ProductsCard() {
     return (
-        <div className="flex-1 bg-white border border-gray-200 border-l-0 border-b-2 w-[785px] ">
+        <div className="flex-1 bg-white border-gray-200 w-full">
             <div className="grid grid-cols-4 h-full">
                 {products.map((product, index) => (
                     <div 
                         key={index} 
-                        className={`relative flex flex-col p-4 border-b-1 border-gray-200
-                                  ${index !== products.length - 1 ? 'border-r border-gray-200' : ''}`}
+                        className={`relative flex flex-col p-4
+                                  ${(index + 1) % 4 !== 0 ? 'border-r border-gray-200' : ''}`}
                     >
                         <div className="flex flex-col">
                             <h3 className="text-[14px] text-gray-600">{product.name}</h3>

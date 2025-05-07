@@ -4,12 +4,12 @@ import Avatar from '../../assets/avatar.png'
 
 function Hero() {
     return (
-        <div>
-            {/* Hero Section */}
-            <div className="grid grid-cols-5 grid-rows-5 gap-5 border-2 border-gray-200 rounded-lg bg-white">
-                
-                {/* Categories List */}
-                <div className="row-span-5 p-4">
+        <div className="w-full md:w-full">
+            {/* Corrected grid definition for medium screens */}
+            <div className="grid grid-cols-1 md:grid-cols-5 grid-rows-auto md:grid-rows-5 gap-0 md:gap-5 md:border-2 md:border-gray-200 md:rounded-lg bg-white overflow-hidden md:overflow-visible md:w-full">
+
+                {/* Categories List - Hidden on mobile */}
+                <div className="hidden md:block md:row-span-5 p-4">
                     {/* Each category is a clickable item */}
                     <span className='flex items-center justify-left py-2 text-[16px] text-gray-600 hover:bg-[#E5F1FF] hover:text-blue-600 hover:font-medium transition-all cursor-pointer rounded-md hover:pl-4'>Automobiles</span>
                     <span className='flex items-center justify-left py-2 text-[16px] text-gray-600 hover:bg-[#E5F1FF] hover:text-blue-600 hover:font-medium transition-all cursor-pointer rounded-md hover:pl-4'>Clothes and wear</span>
@@ -22,26 +22,26 @@ function Hero() {
                     <span className='flex items-center justify-left py-2 text-[16px] text-gray-600 hover:bg-[#E5F1FF] hover:text-blue-600 hover:font-medium transition-all cursor-pointer rounded-md hover:pl-4'>More categories</span>
                 </div>
 
-                {/* Cover Photo Section */}
-                <div className="col-span-3 row-span-5 cover py-4 relative">
+                {/* Cover Photo Section - Spans full width on mobile */}
+                <div className="col-span-1 md:col-span-3 row-span-1 md:row-span-5 relative w-full bg-[#E9F2EF] md:bg-transparent min-h-[280px] md:min-h-0">
                     <img
                         src={Cover}
                         alt="Hero Cover"
-                        className='w-full h-full object-cover'
+                        className='w-full h-full object-cover absolute inset-0 p-4'
                     />
 
-                    {/* Overlay Content */}
-                    <div className='absolute top-0 left-0 w-full h-full p-10 flex flex-col justify-items-start'>
-                        <h2 className='text-[26px]/7 mt-7'>Latest trending</h2>
-                        <h2 className='text-[28px] font-bold'>Electronic items</h2>
-                        <button className='w-30 h-10 font-semibold justify-center items-center flex flex-start rounded-lg bg-amber-50 cursor-pointer'>
+                    {/* Overlay Content - Adjusted padding/text/button style */}
+                    <div className='absolute inset-0 w-full h-full p-12 mb-20 flex flex-col justify-center items-start'>
+                        <h2 className='text-xl md:text-[26px]/7 font-normal text-black'>Latest trending</h2>
+                        <h2 className='text-2xl md:text-[28px] font-bold mb-4 text-black'>Electronic items</h2>
+                        <button className='w-auto px-4 h-10 font-semibold justify-center items-center flex rounded-lg bg-white text-black cursor-pointer shadow-sm'>
                             Learn more
                         </button>
                     </div>
                 </div>
 
-                {/* User Interaction Section */}
-                <div className="col-start-5 row-span-5 flex flex-col gap-4 p-4">
+                {/* User Interaction Section - Hidden on mobile */}
+                <div className="hidden md:flex md:col-start-5 md:row-span-5 flex-col gap-4 p-4">
                     <div className="flex-1 bg-[#E3F0FF] rounded-lg p-4">
                         {/* Avatar and Greeting */}
                         <div className='flex items-center gap-2 mb-3'>

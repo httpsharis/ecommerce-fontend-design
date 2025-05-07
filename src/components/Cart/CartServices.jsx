@@ -23,9 +23,9 @@ function CartServices() {
   ]
 
   return (
-    <div className="flex mt-8 rounded-lg p-2">
+    <div className="flex flex-col sm:flex-row mt-8 rounded-lg p-2 gap-4 sm:gap-0">
       {services.map((service, index) => (
-        <div key={index} className="flex mr-11 items-center gap-4">
+        <div key={index} className="flex mr-0 sm:mr-11 items-center gap-4">
           <div className="bg-gray-100 p-3 rounded-full">
             {service.icon}
           </div>

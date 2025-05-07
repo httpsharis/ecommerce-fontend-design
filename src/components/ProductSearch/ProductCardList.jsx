@@ -20,57 +20,55 @@ const products = [
 
 function ProductCardList() {
     return (
-        <div className="flex flex-col gap-4 w-full ml-3">
+        <div className="flex flex-col gap-1 sm:gap-4 w-full ml-0 sm:ml-3">
             {products.map(product => (
                 <Link 
                     key={product.id} 
                     to={`/products/${product.id}`}  
                     className='hover:no-underline'
                 >
-                    <div className="flex gap-6 bg-white p-3 rounded border border-gray-200 hover:shadow-md transition-shadow">
+                    <div className="flex gap-3 sm:gap-6 bg-white p-3 sm:p-3 rounded-none sm:rounded border-b border-gray-100 sm:border sm:border-gray-200 hover:shadow-md transition-shadow">
                         {/* Product Image */}
-                        <div className="relative w-[200px] flex-shrink-0">
+                        <div className="relative w-[70px] h-[70px] sm:w-[200px] sm:h-[200px] flex-shrink-0">
                             <img
                                 src={product.image}
                                 alt={product.title}
-                                className="w-full h-[200px] object-cover rounded"
+                                className="w-full h-full object-contain sm:object-cover rounded"
                             />
                         </div>
                         
-
                         {/* Product Info */}
-                        <div className="flex-1 space-y-3">
-                            <h3 className="text-gray-800 text-lg font-medium">
-                                {product.title}
-                            </h3>
+                        <div className="flex-1 flex flex-col justify-between py-0 sm:py-1 sm:space-y-3">
+                            <div>
+                                <h3 className="text-gray-800 text-sm font-medium sm:text-lg mb-1 sm:mb-0 line-clamp-2">
+                                    {product.title}
+                                </h3>
 
-                            <div className="flex items-center gap-2">
-                                <span className="text-xl font-semibold">${product.price}</span>
-                                <span className="text-sm text-gray-500 line-through">${product.originalPrice}</span>
-                            </div>
-
-                            {/* Rating */}
-                            <div className="flex items-center gap-1">
-                                <div className="flex items-center text-yellow-400">
-                                    <Star size={14} fill="currentColor" />
-                                    <Star size={14} fill="currentColor" />
-                                    <Star size={14} fill="currentColor" />
-                                    <Star size={14} fill="currentColor" />
-                                    <span className="text-sm ml-1">{product.rating}</span>
-                                    <GoDotFill size={10} fill='gray' className='ml-1' />
+                                <div className="flex items-center gap-2 mb-1 sm:mb-0">
+                                    <span className="text-base font-semibold sm:text-xl">${product.price}</span>
+                                    <span className="text-xs text-gray-500 line-through sm:text-sm">${product.originalPrice}</span>
                                 </div>
-                                <span className="text-gray-400 text-sm">({product.orders}) orders</span>
-                                <GoDotFill size={10} fill='gray' className='ml-1' />
-                                <span className='text-sm ml-1 text-green-600 font-light'>Free shipping</span>
+
+                                {/* Rating */}
+                                <div className="flex items-center gap-1 mb-1 sm:mb-0">
+                                    <div className="flex items-center text-yellow-400">
+                                        <span className="text-xs sm:text-sm">{product.rating}</span>
+                                        <Star size={10} fill="currentColor" className="sm:hidden" />
+                                        <Star size={14} fill="currentColor" className="hidden sm:block" />
+                                    </div>
+                                    <span className="text-gray-400 text-xs sm:text-sm">• {product.orders} orders</span>
+                                </div>
+
+                                <span className='text-xs text-green-600 font-light sm:text-sm'>Free shipping</span>
                             </div>
 
-                            {/* Shipping & Location */}
-                            <div className="flex flex-col text-sm text-gray-500 ">
+                            {/* Description - Only visible on desktop */}
+                            <div className="hidden sm:flex sm:flex-col text-sm text-gray-500">
                                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit tenetur cum, aliquid repellat quis beatae?</span> 
                                 <span className='mt-2 text-blue-600 hover:underline cursor-pointer'>View details</span>
                             </div>
                         </div>
-                        <button className="absolute top-[-10] right-25 bg-white drop-shadow-sm rounded p-1 hover:drop-shadow-lg">
+                        <button className="hidden sm:block absolute top-[-10] right-25 bg-white drop-shadow-sm rounded p-1 hover:drop-shadow-lg">
                             <Heart size={30} className="text-blue-600 p-1" />
                         </button>
                     </div>

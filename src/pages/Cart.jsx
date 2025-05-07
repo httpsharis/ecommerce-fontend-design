@@ -9,61 +9,46 @@ import { products } from '../data/products.js'
 
 function Cart() {
   const { cartItems, savedItems, addToCart, setCartItems } = useGlobal();
-  const [localSavedItems, setLocalSavedItems] = useState(savedItems);
 
   // Add some default products to cart for demonstration
   useEffect(() => {
     if (cartItems.length === 0) {
       // Add a few sample products to the cart
       const sampleProducts = [
-        { ...products[0], quantity: 1 },
-        { ...products[1], quantity: 2 },
-        { ...products[2], quantity: 1 },
-        { ...products[3], quantity: 1 },
-        { ...products[4], quantity: 1 },
-        { ...products[5], quantity: 1 },
-        { ...products[6], quantity: 1 },
-        { ...products[7], quantity: 1 },
-        { ...products[9], quantity: 1 },
-        { ...products[12], quantity: 3 },
-        { ...products[15], quantity: 1 }
+        { ...products[0], quantity: 2 },
+        { ...products[1], quantity: 1 },
+        { ...products[2], quantity: 2 }
       ];
       setCartItems(sampleProducts);
     }
-  }, []);
-
-  useEffect(() => {
-    setLocalSavedItems(savedItems);
-  }, [savedItems]);
-
-  useEffect(() => {
-    localStorage.setItem('savedItems', JSON.stringify(localSavedItems));
-  }, [localSavedItems]);
-
-  const handleMoveToCart = (item) => {
-    addToCart(item);
-    setLocalSavedItems(prevSaved => prevSaved.filter(savedItem => savedItem.id !== item.id));
-  };
+  }, [cartItems.length, setCartItems]);
 
   return (
-    <div className='min-h-screen font-Inter bg-[#F7FAFC] py-8'>
-      <div className='max-w-[1100px] mx-auto px-4'>
-        <h1 className="text-xl font-semibold mb-2">
-          My cart ({cartItems ? cartItems.length : 0})
+    <div className='min-h-screen font-Inter bg-[#F7FAFC] py-0 sm:py-8'>
+      <div className='max-w-[1100px] mx-auto px-0 sm:px-4'>
+        {/* Desktop title - hidden on mobile */}
+        <h1 className="hidden sm:block text-xl font-semibold mb-4">
+          Shopping cart
         </h1>
-        <div className='grid grid-cols-[1fr_300px] gap-6'>
-          <CartProducts
-            cartItems={cartItems}
-            onRemoveItem={handleMoveToCart}
-          />
-          <CartSummary />
+        
+        <div className='grid grid-cols-1 sm:grid-cols-[1fr_300px] gap-4 sm:gap-6'>
+          <CartProducts />
+          <div>
+            <CartSummary />
+          </div>
         </div>
-        <CartServices />
-        <SavedItems
-          savedItems={localSavedItems}
-          onMoveToCart={handleMoveToCart}
-        />
-        <DiscountBanner />
+        
+        {/* Hide services on mobile */}
+        <div className="hidden sm:block">
+          <CartServices />
+        </div>
+        
+        <SavedItems />
+        
+        {/* Hide discount banner on mobile */}
+        <div className="hidden sm:block">
+          <DiscountBanner />
+        </div>
       </div>
     </div>
   )

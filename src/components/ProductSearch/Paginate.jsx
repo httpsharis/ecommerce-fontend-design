@@ -1,46 +1,42 @@
-import React, { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'react-feather'
+import React from 'react'
 
-function Paginate() {
-  const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = 100 
-
-  const pages = Array.from({ length: 5 }, (_, i) => {
-    const pageNum = currentPage + i - 2
-    return pageNum > 0 && pageNum <= totalPages ? pageNum : null
-  }).filter(Boolean)
-
+function Paginate({ currentPage = 1, totalPages = 3, onPageChange }) {
   return (
-    <div className='flex items-center justify-center gap-2 mb-3 max-w-[240px] ml-[660px] bg-white p-2 rounded-lg shadow-sm'>
-      {/* Previous button */}
+    <div className="flex justify-center items-center mt-6 mb-8">
       <button 
-        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-        className='p-1.5 rounded-md hover:bg-gray-100'
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage <= 1}
+        className="flex items-center justify-center w-8 h-8 rounded-md border border-gray-200 bg-white disabled:opacity-50"
       >
-        <ChevronLeft size={18} className="text-gray-600" />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
       </button>
-
-      {/* Page numbers */}
-      {pages.map(pageNum => (
-        <button
-          key={pageNum}
-          onClick={() => setCurrentPage(pageNum)}
-          className={`w-8 h-8 rounded-md text-sm font-medium ${
-            currentPage === pageNum 
-              ? 'bg-blue-600 text-white' 
-              : 'text-gray-600 hover:bg-gray-100'
-          }`}
-        >
-          {pageNum}
-        </button>
-      ))}
-
-      {/* Next button */}
+      
+      <div className="flex mx-2">
+        {[...Array(totalPages)].map((_, index) => (
+          <button
+            key={index}
+            onClick={() => onPageChange(index + 1)}
+            className={`w-8 h-8 mx-1 rounded-md flex items-center justify-center ${
+              currentPage === index + 1
+                ? 'bg-blue-500 text-white'
+                : 'bg-white border border-gray-200 text-gray-700'
+            }`}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+      
       <button 
-        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-        className='p-1.5 rounded-md hover:bg-gray-100'
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage >= totalPages}
+        className="flex items-center justify-center w-8 h-8 rounded-md border border-gray-200 bg-white disabled:opacity-50"
       >
-        <ChevronRight size={18} className="text-gray-600" />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
       </button>
     </div>
   )

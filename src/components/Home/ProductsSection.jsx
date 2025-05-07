@@ -5,26 +5,25 @@ import ProductsCard from './ProductsCard'
 
 function ProductsSection() {
     return (
-        <div className="flex gap-0 mt-8 h-[250px]">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col md:flex-row bg-white border border-gray-200 rounded-lg overflow-hidden mt-8">
             <div 
-                className="w-[300px] border border-gray-200 rounded-l-lg"
-                style={{ backgroundImage: `url(${ProductBg})`, backgroundSize: 'cover' }}
+                className="w-full md:w-[300px] flex-shrink-0"
+                style={{ backgroundImage: `url(${ProductBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             >
-                <div className="p-7">
-                    <div className="flex flex-col">
-                        <h2 className="text-[20px] font-semibold">Home and outdoor</h2>
-
-                        {/* button */}
+                <div className="p-6 md:p-7 h-full bg-black/10">
+                    <div className="flex flex-col h-full justify-between">
+                        <h2 className="text-[20px] font-semibold text-white drop-shadow">Home and outdoor</h2>
                         <div className="flex gap-2 mt-6">
                             <Button />
                         </div>
                     </div>
                 </div>
             </div>
-            
             {/* Product Cards */}
-            <div className='flex-1 cursor-pointer'>
-                <ProductsCard />
+            <div className="flex-1 w-full">
+                <div>
+                    <ProductsCard />
+                </div>
             </div>
         </div>
     )

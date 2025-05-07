@@ -3,8 +3,8 @@ import { Link } from 'react-router'
 
 function NavigationBar() {
   return (
-    <div className='w-full bg-[#F7FAFC] py-5'>
-      <div className='max-w-[1240px] mx-auto px-[5.5rem]'>
+    <div className='w-full bg-[#F7FAFC] py-5 hidden sm:block'>
+      <div className='max-w-[1240px] mx-auto px-4 sm:px-[5.5rem]'>
         <nav className='flex items-center gap-2 text-[14px] text-gray-600'>
           <Link to="/" className='hover:text-blue-600'>
             Home

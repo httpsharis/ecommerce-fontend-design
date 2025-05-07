@@ -17,13 +17,14 @@ function DiscountCard() {
     ]
 
     return (
-        <div className="flex-1 bg-white border border-gray-200 border-l-0 h-full p-3 cursor-pointer">
-            <div className="grid grid-cols-5 h-full">
+        <div className="flex-1 bg-white h-full p-3 cursor-pointer">
+            {/* Use flex with overflow-x-auto and min-w on mobile, grid on md+ */}
+            <div className="flex gap-2 overflow-x-auto min-w-[600px] scrollbar-hide md:min-w-0 md:w-full md:grid md:grid-cols-5 md:gap-0 h-full">
                 {products.map((product, index) => (
                     <div 
                         key={index} 
-                        className={`flex flex-col items-center justify-center p-4 
-                                  ${index !== products.length - 1 ? 'border-r border-gray-200' : ''}`}
+                        className={`flex-shrink-0 w-[180px] md:w-auto flex flex-col items-center justify-center p-4 
+                                  ${index !== products.length - 1 ? 'md:border-r md:border-gray-200' : ''}`}
                     >
                         <img
                             src={product.image}

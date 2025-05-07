@@ -86,7 +86,7 @@ function FilterContainer({ onFilterChange }) {
   }
 
   return (
-    <div className="w-[200px] border-t-1 border-gray-200 ml-17 mt-1">
+    <div className="w-[200px] border-t-1 border-gray-200 ml-13 mt-3">
       {/* Category Section */}
       <div className="py-4 border-b border-gray-200">
         <div

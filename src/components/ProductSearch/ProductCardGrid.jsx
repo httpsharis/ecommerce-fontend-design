@@ -1,65 +1,45 @@
 import React from 'react'
-import { Star, Heart } from 'react-feather'
-import { GoDotFill } from "react-icons/go"
-import { Link } from 'react-router'  
 
-function ProductCardGrid({ products }) {
-    return (
-        <div className="grid grid-cols-3 gap-4 ml-3">
-            {products.map(product => (
-                <Link 
-                    key={product.id} 
-                    to={`/products/${product.id}`}
-                    className='hover:no-underline'
+function ProductCardGrid({ products, onProductClick }) {
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 sm:gap-4 px-1 sm:px-0">
+      {products.map(product => (
+        <div 
+          key={product.id} 
+          className="bg-white border border-gray-200 rounded-md overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
+          onClick={() => onProductClick(product.id)}
+        >
+          <div className="p-2 sm:p-4">
+            <img 
+              src={product.image} 
+              alt={product.title} 
+              className="w-full h-28 sm:h-40 object-contain mb-2 sm:mb-3"
+            />
+            <h3 className="text-xs sm:text-sm font-medium text-gray-900 mb-1 line-clamp-2">{product.title}</h3>
+            <p className="text-sm sm:text-lg font-bold text-gray-900">${product.price.toFixed(2)}</p>
+            
+            {/* Rating stars */}
+            <div className="flex items-center mt-1">
+              {[...Array(5)].map((_, i) => (
+                <svg 
+                  key={i} 
+                  className={`w-3 h-3 sm:w-4 sm:h-4 ${i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'}`} 
+                  fill="currentColor" 
+                  viewBox="0 0 20 20"
                 >
-                    <div className="bg-white p-4 rounded border border-gray-200 hover:shadow-md transition-shadow">
-                        {/* Product Image */}
-                        <div className="relative mb-4">
-                            <img 
-                                src={product.image} 
-                                alt={product.title}
-                                className="w-full h-48 object-contain"
-                            />
-                            <button className="absolute top-2 right-2 p-1.5 bg-white rounded-full hover:bg-gray-100 shadow-sm">
-                                <Heart size={16} className="text-blue-600" />
-                            </button>
-                        </div>
-
-                        {/* Product Info */}
-                        <div className="space-y-2">
-                            {/* Price */}
-                            <div className="flex gap-2 items-center">
-                                <span className="text-xl font-semibold">${product.price}</span>
-                                <span className="text-sm text-gray-500 line-through">${product.originalPrice}</span>
-                            </div>
-
-                            {/* Title */}
-                            <h3 className="text-gray-800 text-sm line-clamp-2">
-                                {product.title}
-                            </h3>
-
-                            {/* Rating & Orders */}
-                            <div className="flex items-center gap-1">
-                                <div className="flex items-center text-yellow-400">
-                                    <Star size={14} fill="currentColor" />
-                                    <span className="text-sm ml-1">{product.rating}</span>
-                                </div>
-                                <GoDotFill size={10} fill='gray' className='ml-1' />
-                                <span className="text-gray-400 text-sm">({product.orders})</span>
-                            </div>
-
-                            {/* Shipping & Location */}
-                            <div className="flex items-center text-sm gap-1">
-                                <span className="text-green-600">{product.shipping}</span>
-                                <GoDotFill size={10} fill='gray' />
-                                <span className="text-gray-500">From {product.location}</span>
-                            </div>
-                        </div>
-                    </div>
-                </Link>
-            ))}
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+              <span className="text-[10px] sm:text-xs text-gray-500 ml-1">({product.reviews} reviews)</span>
+            </div>
+            
+            {/* Free shipping tag */}
+            <p className="text-[10px] sm:text-xs text-green-600 mt-1">Free Shipping</p>
+          </div>
         </div>
-    )
+      ))}
+    </div>
+  )
 }
 
 export default ProductCardGrid

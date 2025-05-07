@@ -1,25 +1,84 @@
 import React from 'react';
+import { useGlobal } from '../../context/GlobalContext';
 
-function SavedItems({ savedItems, onMoveToCart }) {
+function SavedItems() {
+  const { savedItems, addToCart, setSavedItems } = useGlobal();
+
+  const handleMoveToCart = (item) => {
+    addToCart(item);
+    setSavedItems(prev => prev.filter(savedItem => savedItem.id !== item.id));
+  };
+
+  const handleRemove = (id) => {
+    setSavedItems(prev => prev.filter(item => item.id !== id));
+  };
+
+  if (!savedItems || savedItems.length === 0) return null;
+
   return (
-    <div className="mt-8">
-      <h2 className="text-lg font-semibold mb-4">Saved for later</h2>
-      <div className="grid grid-cols-4 gap-4">
-        {savedItems.map((product) => (
-          <div key={product.id} className="bg-white p-4 rounded-lg">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-40 object-contain mb-2"
-            />
-            <div className="space-y-2">
-              <span className="font-semibold text-[15px]">${product.price}</span>
-              <p className="text-[14px] text-gray-600 line-clamp-2">{product.name}</p>
+    <div className="mt-6 sm:mt-8">
+      <h2 className="text-lg font-medium mb-4">Saved for later</h2>
+      
+      {/* Mobile saved items */}
+      <div className="sm:hidden space-y-4">
+        {savedItems.map((item) => (
+          <div key={item.id} className="bg-white p-4 rounded-lg border border-gray-200">
+            <div className="flex items-center gap-3 mb-3">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                className="w-12 h-12 object-contain"
+              />
+              <div>
+                <h3 className="text-sm font-medium">{item.title}</h3>
+                <p className="text-sm font-medium">${item.price.toFixed(2)}</p>
+              </div>
+            </div>
+            <div className="flex gap-2">
               <button 
-                onClick={() => onMoveToCart(product)}
-                className="text-blue-600 text-sm border border-gray-200 rounded p-2 hover:bg-gray-50 w-full flex items-center justify-center gap-2"
+                onClick={() => handleMoveToCart(item)}
+                className="text-blue-600 text-xs px-3 py-1 border border-gray-200 rounded hover:bg-gray-50 flex-1"
               >
                 Move to cart
+              </button>
+              <button 
+                onClick={() => handleRemove(item.id)}
+                className="text-red-500 text-xs px-3 py-1 border border-gray-200 rounded hover:bg-gray-50"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Desktop saved items */}
+      <div className="hidden sm:grid grid-cols-3 gap-4">
+        {savedItems.map((item) => (
+          <div key={item.id} className="bg-white p-4 rounded-lg border border-gray-200 flex flex-col">
+            <div className="flex items-center gap-3 mb-2">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                className="w-12 h-12 object-contain"
+              />
+              <div>
+                <h3 className="text-sm font-medium">{item.title}</h3>
+                <p className="text-sm font-medium">${item.price.toFixed(2)}</p>
+              </div>
+            </div>
+            <div className="flex mt-auto pt-2 gap-2">
+              <button 
+                onClick={() => handleMoveToCart(item)}
+                className="text-blue-600 text-xs px-3 py-1 border border-gray-200 rounded hover:bg-gray-50 flex-1"
+              >
+                Move to cart
+              </button>
+              <button 
+                onClick={() => handleRemove(item.id)}
+                className="text-red-500 text-xs px-3 py-1 border border-gray-200 rounded hover:bg-gray-50"
+              >
+                Remove
               </button>
             </div>
           </div>

@@ -9,7 +9,7 @@ import RequestSection from '../components/Home/RequestSection'
 function Home() {
     return (
 
-        <div className=' flex flex-col justify-center items-center p-[24px] px-[5.5rem] font-Inter bg-[#F7FAFC]'>
+        <div className='flex flex-col w-full max-w-[1100px] mx-auto py-[24px] px-4 font-Inter bg-[#F7FAFC]'>
             {/* Hero Section */}
             <Hero />
 
